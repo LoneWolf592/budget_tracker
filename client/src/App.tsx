@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import AppLayout from './components/layout/AppLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -10,7 +11,8 @@ import Settings from './pages/Settings';
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-400">Loading…</div>;
-  return user ? <>{children}</> : <Navigate to="/login" replace />;
+  // Wrap every protected page in AppLayout so the sidebar is always present
+  return user ? <AppLayout>{children}</AppLayout> : <Navigate to="/login" replace />;
 }
 
 function GuestRoute({ children }: { children: React.ReactNode }) {
