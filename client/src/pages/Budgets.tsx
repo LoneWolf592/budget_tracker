@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useBudgets } from '../hooks/useBudgets';
 import { formatCurrency } from '../utils/formatCurrency';
 import type { Category } from '../types';

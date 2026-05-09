@@ -29,7 +29,7 @@ export default function MonthlyBarChart({ data }: Props) {
         <XAxis dataKey="month" tick={{ fontSize: 12 }} />
         {/* YAxis auto-scales to the data range */}
         <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => `$${v}`} />
-        <Tooltip formatter={(value: number) => `$${value.toFixed(2)}`} />
+        <Tooltip formatter={(value) => typeof value === 'number' ? `$${value.toFixed(2)}` : value} />
         <Legend />
         <Bar dataKey="income" name="Income" fill="#10b981" radius={[4, 4, 0, 0]} />
         <Bar dataKey="expenses" name="Expenses" fill="#ef4444" radius={[4, 4, 0, 0]} />

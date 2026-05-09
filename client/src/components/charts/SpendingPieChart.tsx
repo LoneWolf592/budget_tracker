@@ -39,7 +39,7 @@ export default function SpendingPieChart({ data }: Props) {
           ))}
         </Pie>
         {/* Tooltip shows the category + dollar amount on hover */}
-        <Tooltip formatter={(value: number) => [`$${value.toFixed(2)}`, 'Spent']} />
+        <Tooltip formatter={(value) => [typeof value === 'number' ? `$${value.toFixed(2)}` : value, 'Spent']} />
         <Legend />
       </PieChart>
     </ResponsiveContainer>

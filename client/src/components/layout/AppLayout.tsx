@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import Sidebar from './Sidebar';
 
 // AppLayout wraps every protected page with the sidebar.

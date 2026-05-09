@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, FormEvent } from 'react';
+import { useState, useRef, useEffect, type FormEvent } from 'react';
 import api from '../../api';
 
 interface Message {
