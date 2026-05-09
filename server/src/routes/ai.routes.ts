@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import { authenticate } from '../middleware/auth.middleware';
+import { chat } from '../controllers/ai.controller';
 
 const router = Router();
 
 router.use(authenticate);
 
-// TODO: wire up AI controller
-router.post('/chat', (_req, res) => res.json({ message: 'AI chat coming soon' }));
+router.post('/chat', chat); // POST /api/ai/chat
 
 export default router;

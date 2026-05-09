@@ -6,6 +6,7 @@ import transactionRoutes from './routes/transaction.routes';
 import budgetRoutes from './routes/budget.routes';
 import aiRoutes from './routes/ai.routes';
 import shareRoutes from './routes/share.routes';
+import settingsRoutes from './routes/settings.routes';
 import { errorHandler } from './middleware/error.middleware';
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use('/api/transactions', transactionRoutes);
 app.use('/api/budgets', budgetRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/share', shareRoutes);
+app.use('/api/settings', settingsRoutes);
 
 app.use(errorHandler);
 
