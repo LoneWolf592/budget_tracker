@@ -30,6 +30,11 @@ app.use('/api/settings', settingsRoutes);
 
 app.use(errorHandler);
 
+// Health check — hitting the root URL confirms the server is up
+app.get('/', (_req, res) => {
+  res.json({ status: 'ok', message: 'ClearBudget API is running' });
+});
+
 // Only start the HTTP server when running locally (not on Vercel serverless)
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
